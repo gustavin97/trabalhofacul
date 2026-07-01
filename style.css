@@ -2,7 +2,6 @@
   --bg: #f6f1e8;
   --bg-soft: #fffdf9;
   --surface: rgba(255, 253, 249, 0.86);
-  --surface-strong: #fffaf1;
   --text: #1d1d1b;
   --muted: #5f5a52;
   --accent: #d96846;
@@ -44,14 +43,14 @@ a {
   color: inherit;
 }
 
-.header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
   padding: 18px 24px 0;
 }
 
-.nav {
+.navbar {
   max-width: var(--container);
   margin: 0 auto;
   padding: 18px 24px;
@@ -67,10 +66,10 @@ a {
 }
 
 .brand,
-.menu a,
-.btn,
+.nav-list a,
+.button,
 .text-link,
-button {
+.contact-form button {
   transition: 0.25s ease;
 }
 
@@ -78,11 +77,11 @@ button {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
-  text-decoration: none;
   letter-spacing: 0.04em;
+  text-decoration: none;
 }
 
-.menu {
+.nav-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -90,13 +89,13 @@ button {
   gap: 18px;
 }
 
-.menu a {
-  text-decoration: none;
+.nav-list a {
   color: var(--muted);
   font-size: 0.96rem;
+  text-decoration: none;
 }
 
-.menu a:hover,
+.nav-list a:hover,
 .brand:hover,
 .text-link:hover {
   color: var(--accent-dark);
@@ -107,7 +106,7 @@ main {
 }
 
 .hero,
-.section {
+.content-section {
   max-width: var(--container);
   margin: 0 auto;
   padding-left: 24px;
@@ -124,35 +123,35 @@ main {
   align-items: center;
 }
 
-.hero-copy h1,
+.hero-content h1,
 .section-heading h2,
-.card h3,
+.content-card h3,
 .timeline-item h3,
 .project-content h3,
-.contact-copy h2 {
+.contact-content h2 {
   font-family: "Space Grotesk", sans-serif;
   line-height: 1.05;
 }
 
-.eyebrow {
+.section-label {
   margin-bottom: 14px;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   color: var(--accent-dark);
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
-.hero-copy h1 {
-  font-size: clamp(2.8rem, 5vw, 5.2rem);
+.hero-content h1 {
   margin-bottom: 22px;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
 }
 
-.hero-description,
+.hero-text,
 .about-content p,
-.contact-copy p {
-  font-size: 1.08rem;
+.contact-content p {
   color: var(--muted);
+  font-size: 1.08rem;
 }
 
 .hero-actions {
@@ -162,7 +161,7 @@ main {
   gap: 16px;
 }
 
-.btn {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -173,37 +172,37 @@ main {
   text-decoration: none;
 }
 
-.btn-primary {
+.button-primary {
   background: var(--accent);
   color: #fff7f2;
   box-shadow: 0 14px 30px rgba(217, 104, 70, 0.28);
 }
 
-.btn-primary:hover,
+.button-primary:hover,
 .contact-form button:hover {
   background: var(--accent-dark);
 }
 
-.btn-secondary {
+.button-secondary {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.5);
 }
 
-.btn-secondary:hover {
+.button-secondary:hover {
   border-color: rgba(169, 71, 42, 0.3);
   color: var(--accent-dark);
 }
 
-.hero-highlights {
+.highlight-grid {
   margin-top: 38px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-.hero-highlights div,
+.highlight-card,
 .info-card,
-.card,
+.content-card,
 .timeline-item,
 .project-card,
 .contact-box {
@@ -212,27 +211,27 @@ main {
   box-shadow: var(--shadow);
 }
 
-.hero-highlights div {
+.highlight-card {
   padding: 18px;
   border-radius: var(--radius-sm);
 }
 
-.hero-highlights strong {
+.highlight-card strong {
   display: block;
   margin-bottom: 8px;
   font-size: 1rem;
 }
 
-.hero-highlights span {
+.highlight-card span {
   color: var(--muted);
   font-size: 0.92rem;
 }
 
-.hero-visual {
+.hero-image-wrapper {
   position: relative;
 }
 
-.hero-card {
+.hero-image-card {
   position: relative;
   padding: 18px;
   border-radius: var(--radius-lg);
@@ -240,7 +239,7 @@ main {
   box-shadow: 0 24px 60px rgba(88, 48, 25, 0.18);
 }
 
-.hero-card::before {
+.hero-image-card::before {
   content: "";
   position: absolute;
   inset: -16px auto auto -16px;
@@ -251,30 +250,30 @@ main {
   z-index: -1;
 }
 
-.hero-card img {
+.hero-image-card img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 24px;
 }
 
-.section {
+.content-section {
   padding-top: 84px;
   padding-bottom: 84px;
 }
 
-.section-alt {
+.content-section-alt {
   position: relative;
 }
 
-.section-alt::before {
+.content-section-alt::before {
   content: "";
   position: absolute;
   inset: 28px 24px;
-  background: rgba(255, 248, 239, 0.52);
-  border-radius: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
   z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 40px;
+  background: rgba(255, 248, 239, 0.52);
 }
 
 .section-heading {
@@ -306,15 +305,15 @@ main {
   gap: 18px;
 }
 
-.info-cards {
+.info-grid {
+  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 10px;
 }
 
 .info-card,
-.card,
+.content-card,
 .project-card,
 .timeline-item {
   border-radius: var(--radius-md);
@@ -325,14 +324,14 @@ main {
 }
 
 .info-card span,
-.card-tag {
+.card-label {
   display: inline-block;
   margin-bottom: 12px;
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
   color: var(--accent-dark);
+  font-size: 0.78rem;
   font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .info-card strong {
@@ -340,35 +339,35 @@ main {
   line-height: 1.45;
 }
 
-.cards,
-.projects-grid {
+.card-grid,
+.project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
 }
 
-.card {
+.content-card {
   padding: 28px;
 }
 
-.card h3 {
-  font-size: 1.45rem;
+.content-card h3 {
   margin-bottom: 14px;
+  font-size: 1.45rem;
 }
 
-.card p,
+.content-card p,
 .timeline-item p,
 .project-content p {
   color: var(--muted);
 }
 
-.tech-list {
+.skill-list {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
 }
 
-.tech-list span {
+.skill-list span {
   padding: 14px 18px;
   border-radius: 999px;
   background: rgba(29, 29, 27, 0.92);
@@ -400,8 +399,8 @@ main {
 }
 
 .timeline-item h3 {
-  font-size: 1.28rem;
   margin-bottom: 8px;
+  font-size: 1.28rem;
 }
 
 .project-card {
@@ -419,15 +418,15 @@ main {
 }
 
 .project-content h3 {
-  font-size: 1.5rem;
   margin-bottom: 12px;
+  font-size: 1.5rem;
 }
 
 .text-link {
   display: inline-block;
   margin-top: 18px;
-  font-weight: 700;
   color: var(--accent-dark);
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -436,16 +435,16 @@ main {
 }
 
 .contact-box {
-  padding: 34px;
-  border-radius: 34px;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1fr);
   gap: 28px;
+  padding: 34px;
+  border-radius: 34px;
 }
 
-.contact-copy h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
+.contact-content h2 {
   margin-bottom: 14px;
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 
 .contact-form {
@@ -465,8 +464,8 @@ main {
 .contact-form input,
 .contact-form textarea {
   padding: 16px 18px;
-  background: var(--bg-soft);
   color: var(--text);
+  background: var(--bg-soft);
 }
 
 .contact-form input:focus,
@@ -488,21 +487,21 @@ main {
   cursor: pointer;
 }
 
-.footer {
+.site-footer {
   padding: 0 24px 34px;
-  text-align: center;
   color: var(--muted);
+  text-align: center;
 }
 
 @media (max-width: 980px) {
-  .nav,
+  .navbar,
   .hero,
   .about-grid,
   .contact-box {
     grid-template-columns: 1fr;
   }
 
-  .nav {
+  .navbar {
     border-radius: 28px;
   }
 
@@ -510,54 +509,54 @@ main {
     padding-top: 44px;
   }
 
-  .hero-highlights,
-  .cards,
-  .projects-grid,
-  .info-cards {
+  .highlight-grid,
+  .card-grid,
+  .project-grid,
+  .info-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
-  .header {
+  .site-header {
     padding: 14px 14px 0;
   }
 
-  .nav,
+  .navbar,
   .hero,
-  .section {
+  .content-section {
     padding-left: 18px;
     padding-right: 18px;
   }
 
-  .nav {
+  .navbar {
     padding: 18px;
   }
 
-  .menu {
+  .nav-list {
     gap: 12px;
   }
 
-  .menu a {
+  .nav-list a {
     font-size: 0.92rem;
   }
 
-  .hero-description,
+  .hero-text,
   .about-content p,
-  .contact-copy p {
+  .contact-content p {
     font-size: 1rem;
   }
 
-  .hero-highlights {
+  .highlight-grid {
     gap: 12px;
   }
 
-  .section {
+  .content-section {
     padding-top: 72px;
     padding-bottom: 72px;
   }
 
-  .section-alt::before {
+  .content-section-alt::before {
     inset: 18px 12px;
     border-radius: 28px;
   }
