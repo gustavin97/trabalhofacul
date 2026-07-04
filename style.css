@@ -117,10 +117,14 @@ main {
   min-height: calc(100vh - 96px);
   padding-top: 72px;
   padding-bottom: 72px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 440px);
-  gap: 48px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 860px;
 }
 
 .hero-content h1,
@@ -159,6 +163,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .button {
@@ -214,6 +219,7 @@ main {
 .highlight-card {
   padding: 18px;
   border-radius: var(--radius-sm);
+  text-align: center;
 }
 
 .highlight-card strong {
@@ -225,36 +231,6 @@ main {
 .highlight-card span {
   color: var(--muted);
   font-size: 0.92rem;
-}
-
-.hero-image-wrapper {
-  position: relative;
-}
-
-.hero-image-card {
-  position: relative;
-  padding: 18px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(245, 234, 220, 0.88));
-  box-shadow: 0 24px 60px rgba(88, 48, 25, 0.18);
-}
-
-.hero-image-card::before {
-  content: "";
-  position: absolute;
-  inset: -16px auto auto -16px;
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  background: rgba(217, 104, 70, 0.14);
-  z-index: -1;
-}
-
-.hero-image-card img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 24px;
 }
 
 .content-section {
@@ -346,8 +322,38 @@ main {
   gap: 22px;
 }
 
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.education-item {
+  text-align: center;
+}
+
+.education-image {
+  width: 100%;
+  max-width: 220px;
+  height: 160px;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+
 .content-card {
   padding: 28px;
+}
+
+.education-item h3 {
+  margin-bottom: 14px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.05;
+}
+
+.education-item p:not(.card-label) {
+  color: var(--muted);
 }
 
 .content-card h3 {
